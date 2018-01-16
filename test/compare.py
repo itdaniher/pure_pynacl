@@ -14,13 +14,10 @@ from subprocess import call
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter, ArgumentTypeError
 
 # import pure_pynacl libs
-test_dir = os.path.split(__file__)[0]
-libraries = [os.path.join(test_dir, lib) for lib in os.listdir(test_dir) if lib.endswith('.so')]
-call(['rm', '-f'] + libraries)
 from pure_pynacl import tweetnacl as py_tweetnacl
 
 # import testing libraries
-from test import bit_ops as py_bit_ops
+import bit_ops as py_bit_ops
 from test import ptr, randargs
 from test import CLibrary
 
